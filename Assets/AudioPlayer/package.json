@@ -14,5 +14,12 @@
       "bgm"
     ],
     "dependencies": {
-    }
+    },
+    "samples": [
+      {
+        "displayName": "AudioPlayer Demo",
+        "description": "",
+        "path": "Samples"
+      }
+    ]
 }
