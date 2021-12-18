@@ -19,7 +19,7 @@
       {
         "displayName": "AudioPlayer Demo",
         "description": "",
-        "path": "../Samples/AudioPlayerDemo"
+        "path": "Samples~/AudioPlayerDemo"
       }
     ]
 }
