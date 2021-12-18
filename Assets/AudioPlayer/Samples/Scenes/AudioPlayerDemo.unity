@@ -489,7 +489,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eab4b9b4e52840a1a30cfa34f0156143, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playType: 0
+  _id: 0
   _audioClip: {fileID: 8300000, guid: a6db722e59d9f8844a821ab0412953f9, type: 3}
+  _pitch: 1
   _ignoreTimeScale: 0
   _fadeInTime: 0
   _fadeOutTime: 0
@@ -1442,6 +1445,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _clip: {fileID: 8300000, guid: ecbd63095ee24f542b0182f7f45a7c77, type: 3}
+  _pitch: 1
 --- !u!114 &1576547878
 MonoBehaviour:
   m_ObjectHideFlags: 0
