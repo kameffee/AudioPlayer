@@ -13,6 +13,7 @@
       "player",
       "bgm"
     ],
+    "license" : "MIT",
     "dependencies": {
     },
     "samples": [
