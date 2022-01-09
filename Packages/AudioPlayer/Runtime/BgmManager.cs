@@ -27,6 +27,7 @@ namespace Kameffee.AudioPlayer
         public static BgmManager Create()
         {
             var bgm = new GameObject(ManagerName);
+            DontDestroyOnLoad(bgm);
             return bgm.AddComponent<BgmManager>();
         }
 
@@ -169,7 +170,7 @@ namespace Kameffee.AudioPlayer
         public void SetVolume(float volume)
         {
             var toVolume = Mathf.Clamp01(volume);
-            var isChange = volume != toVolume;
+            var isChange = _volume != toVolume;
             _volume = toVolume;
 
             foreach (var bgmPlayer in _bgmPlayers)

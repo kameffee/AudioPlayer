@@ -21,6 +21,7 @@ namespace Kameffee.AudioPlayer
         public static SeManager Create()
         {
             var se = new GameObject(SeManagerName);
+            DontDestroyOnLoad(se);
             return se.AddComponent<SeManager>();
         }
 
@@ -85,7 +86,7 @@ namespace Kameffee.AudioPlayer
         public void SetVolume(float volume)
         {
             var toVolume = Mathf.Clamp01(volume);
-            var isChange = volume != toVolume;
+            var isChange = _volume != toVolume;
             _volume = toVolume;
 
             foreach (var sePlayer in _sePlayers)
