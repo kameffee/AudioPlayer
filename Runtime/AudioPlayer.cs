@@ -50,6 +50,12 @@ namespace Kameffee.AudioPlayer
         public bool Initialized => _initialized;
         private bool _initialized;
 
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+        private static void PreInitialize()
+        {
+            _instance = null;
+        }
+
         public void Initialize()
         {
             if (_initialized)
