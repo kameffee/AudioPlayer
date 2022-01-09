@@ -27,6 +27,7 @@ namespace Kameffee.AudioPlayer
         public static BgmManager Create()
         {
             var bgm = new GameObject(ManagerName);
+            DontDestroyOnLoad(bgm);
             return bgm.AddComponent<BgmManager>();
         }
 

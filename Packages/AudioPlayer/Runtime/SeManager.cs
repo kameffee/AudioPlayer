@@ -21,6 +21,7 @@ namespace Kameffee.AudioPlayer
         public static SeManager Create()
         {
             var se = new GameObject(SeManagerName);
+            DontDestroyOnLoad(se);
             return se.AddComponent<SeManager>();
         }
 
