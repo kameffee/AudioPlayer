@@ -4,7 +4,7 @@ using UnityEngine.UI;
 namespace Kameffee.AudioPlayer
 {
     [AddComponentMenu("UI/Audio/SeSlider")]
-    public class SeSlider : MonoBehaviour
+    public sealed class SeSlider : MonoBehaviour
     {
         [SerializeField]
         private Slider seSlider;

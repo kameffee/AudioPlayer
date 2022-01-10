@@ -10,7 +10,7 @@ namespace Kameffee.AudioPlayer
     }
 
     [AddComponentMenu("Audio/Bgm Player")]
-    public class BgmPlayer : MonoBehaviour
+    public sealed class BgmPlayer : MonoBehaviour
     {
         [SerializeField]
         private PlayType _playType;

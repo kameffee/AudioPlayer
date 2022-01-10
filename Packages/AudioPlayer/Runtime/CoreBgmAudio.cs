@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Kameffee.AudioPlayer
 {
     [AddComponentMenu("")]
-    public class CoreBgmAudio : MonoBehaviour
+    public sealed class CoreBgmAudio : MonoBehaviour
     {
         public AudioSource AudioSource
         {
