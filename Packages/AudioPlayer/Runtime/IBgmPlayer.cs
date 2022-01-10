@@ -5,6 +5,8 @@ namespace Kameffee.AudioPlayer
 {
     public interface IBgmPlayer
     {
+        bool IsPlaying { get; }
+
         float Volume { get; }
 
         event Action<float> OnChangeVolume;

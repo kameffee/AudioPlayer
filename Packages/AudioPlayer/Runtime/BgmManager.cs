@@ -15,6 +15,8 @@ namespace Kameffee.AudioPlayer
 
         private int _preInstanceCount = 2;
 
+        public bool IsPlaying => _bgmPlayers.Any(bgmAudio => bgmAudio.IsPlaying);
+
         public float Volume => _volume;
         private float _volume;
 
