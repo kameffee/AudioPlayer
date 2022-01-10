@@ -3,7 +3,7 @@
 namespace Kameffee.AudioPlayer
 {
     [AddComponentMenu("Audio/Se Player")]
-    public class SePlayer : MonoBehaviour
+    public sealed class SePlayer : MonoBehaviour
     {
         [SerializeField]
         private AudioClip _clip;

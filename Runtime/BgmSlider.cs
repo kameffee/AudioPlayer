@@ -4,7 +4,7 @@ using UnityEngine.UI;
 namespace Kameffee.AudioPlayer
 {
     [AddComponentMenu("UI/Audio/Bgm Slider")]
-    public class BgmSlider : MonoBehaviour
+    public sealed class BgmSlider : MonoBehaviour
     {
         [SerializeField]
         private Slider bgmSlider;

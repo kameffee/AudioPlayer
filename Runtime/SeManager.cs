@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Kameffee.AudioPlayer
 {
-    public class SeManager : MonoBehaviour
+    public sealed class SeManager : MonoBehaviour, ISePlayer
     {
         private static readonly string SeManagerName = "SeManager";
         private static readonly string SePlayerName = "SePlayer";
