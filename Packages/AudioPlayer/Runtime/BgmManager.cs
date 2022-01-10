@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Kameffee.AudioPlayer
 {
-    public class BgmManager : MonoBehaviour
+    public sealed class BgmManager : MonoBehaviour, IBgmPlayer
     {
         private static readonly string ManagerName = "BgmManager";
         private static readonly string PlayerName = "BgmPlayer";
