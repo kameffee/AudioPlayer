@@ -3,7 +3,7 @@
 namespace Kameffee.AudioPlayer
 {
     [AddComponentMenu("")]
-    public class CoreSeAudio : MonoBehaviour
+    public sealed class CoreSeAudio : MonoBehaviour
     {
         public AudioSource AudioSource
         {

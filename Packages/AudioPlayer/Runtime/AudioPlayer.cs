@@ -3,9 +3,9 @@ using UnityEngine;
 
 namespace Kameffee.AudioPlayer
 {
-    public class AudioPlayer
+    public sealed class AudioPlayer : IAudioPlayer
     {
-        public static AudioPlayer Instance
+        public static IAudioPlayer Instance
         {
             get
             {
@@ -21,28 +21,13 @@ namespace Kameffee.AudioPlayer
 
         private static AudioPlayer _instance;
 
-        public BgmManager Bgm => _bgmManager;
+        public IBgmPlayer Bgm => _bgmManager;
         private BgmManager _bgmManager;
 
-        public SeManager Se => _seManager;
+        public ISePlayer Se => _seManager;
         private SeManager _seManager;
 
-        public float MasterVolume
-        {
-            get => _masterVolume;
-            set
-            {
-                var toVolume = Mathf.Clamp01(value);
-                bool isChange = Math.Abs(toVolume - _masterVolume) > 0.000001f;
-                _masterVolume = toVolume;
-
-                if (isChange)
-                {
-                    OnChangeMasterVolume?.Invoke(toVolume);
-                }
-            }
-        }
-
+        public float MasterVolume => _masterVolume;
         private float _masterVolume;
 
         public event Action<float> OnChangeMasterVolume = null;
@@ -87,6 +72,18 @@ namespace Kameffee.AudioPlayer
             // Initialize SE
             _seManager = SeManager.Create();
             _seManager.Initialize();
+        }
+
+        public void SetMasterVolume(float volume)
+        {
+            var toVolume = Mathf.Clamp01(volume);
+            bool isChange = Math.Abs(toVolume - _masterVolume) > 0.000001f;
+            _masterVolume = toVolume;
+
+            if (isChange)
+            {
+                OnChangeMasterVolume?.Invoke(toVolume);
+            }
         }
     }
 }
