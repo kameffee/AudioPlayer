@@ -10,6 +10,8 @@ namespace Kameffee.AudioPlayer
         event Action<float> OnChangeVolume;
 
         void Play(AudioClip audioClip, float pitch = 1f);
+        
+        void Play(string key, float pitch = 1f);
 
         void Stop();
 
