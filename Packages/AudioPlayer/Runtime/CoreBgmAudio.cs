@@ -36,6 +36,7 @@ namespace Kameffee.AudioPlayer
 
         public void Play(AudioClip audioClip, float pitch = 1, float fadeTime = 0, bool ignoreTimeScale = false)
         {
+            AudioSource.loop = true;
             AudioSource.clip = audioClip;
             AudioSource.pitch = pitch;
 
