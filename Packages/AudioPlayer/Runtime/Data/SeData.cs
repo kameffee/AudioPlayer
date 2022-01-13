@@ -17,6 +17,7 @@ namespace Kameffee.AudioPlayer
         private AudioClip _audioClip;
 
         [SerializeField]
+        [Range(-3f, 3f)]
         private float _pitch = 1f;
     }
 }
