@@ -67,11 +67,16 @@ namespace Kameffee.AudioPlayer
             _bgmManager.Initialize(bgmDataLoader.Invoke());
         }
 
-        public void InitializeSe()
+        public void InitializeSe(Func<ISeBundle> seDataLoader = null)
         {
+            if (seDataLoader == null)
+            {
+                seDataLoader = () => Resources.Load<SeBundle>("SeBundle");
+            }
+            
             // Initialize SE
             _seManager = SeManager.Create();
-            _seManager.Initialize();
+            _seManager.Initialize(seDataLoader.Invoke());
         }
 
         public void SetMasterVolume(float volume)
