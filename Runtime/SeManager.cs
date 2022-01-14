@@ -18,6 +18,8 @@ namespace Kameffee.AudioPlayer
 
         public event Action<float> OnChangeVolume = null;
 
+        private ISeBundle _seBundle;
+
         public static SeManager Create()
         {
             var se = new GameObject(SeManagerName);
@@ -25,8 +27,9 @@ namespace Kameffee.AudioPlayer
             return se.AddComponent<SeManager>();
         }
 
-        public void Initialize(float initialVolume = 1)
+        public void Initialize(ISeBundle seBundle, float initialVolume = 1)
         {
+            _seBundle = seBundle;
             _volume = initialVolume;
 
             for (int i = 0; i < _preInstanceCount; i++)
@@ -42,6 +45,18 @@ namespace Kameffee.AudioPlayer
             var player = obj.AddComponent<CoreSeAudio>();
             player.SetVolume(_volume);
             return player;
+        }
+
+        public void Play(string key, float pitch = 1)
+        {
+            if (_seBundle == null)
+            {
+                Debug.LogError("SeBundle is not loaded.");
+                return;
+            }
+
+            var seData = _seBundle.GetData(key);
+            Play(seData.AudioClip, pitch);
         }
 
         public void Play(AudioClip audioClip, float pitch = 1f)
